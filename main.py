@@ -36,22 +36,31 @@ def choice_thread(server, my_token):
       4 - Add solo sd win
       5 - Send club message
       6 - Create game room
-      7 - 31
+      7 - 31"""+" çek" * 5 + """
       8 - break server (available in pro version only 1 discord nitro to buy!!!)
       9 - """)
     c = int(input("Your choice: "))
 
     if c == 1: 
-        pass
+        server.me_want_trophy()
+        print("ok")
+        server.r() 
+
+        # recieve everything
+        # you get home data too i think
+        # appearantly you don't
 
     if c == 2: 
-        pass
+        server.me_want_mega_box()
+        print("ok opened mega box")
 
     if c == 3: 
         pass
 
     if c == 4: 
-        pass
+        server.me_want_more_trophy()
+        print("ok")
+        server.r() 
 
     if c == 5: 
         pass
@@ -62,12 +71,12 @@ def choice_thread(server, my_token):
     if c == 7: 
         pass
 
-    if c == 8: 
-        pass
+    if c == 8: pass
 
     if c == 9: 
         pass
-        
+
+    choice_thread(server, my_token) # recurse
 
 
 
@@ -106,6 +115,7 @@ def client_thread():
     # Login
     if not iAmNew:
         server.SendLoginMessage(my_token)
+
     time.sleep(0.7)
     poop = s.recv(4096)
     print("Log in done")

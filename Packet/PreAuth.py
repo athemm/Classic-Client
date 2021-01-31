@@ -18,7 +18,7 @@ class PreAuth(Writer):
         self.writeInt(165)
         self.putString('1660a966daa31a498bee59a78670c89ef4364b05')
         self.writeInt(0)
-        self.putString('notyourbusiness')
-        self.putString('notyourbusiness')
-        self.putString('notyourbusiness')
+        self.putString('nyb')
+        self.putString('nyb')
+        self.putString('nyb')
         

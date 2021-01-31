@@ -32,8 +32,21 @@ class Server:
                 self.client = client
                 self.name_len = name_len
 
+        def r(self):
+            return recv(self.client)          
+
         def me_want_trophy(self):
                 self.client.send(open("trophies.bin", "rb").read())
+                    # message is too long
+                    # so i send it from file
+
+        def me_want_more_trophy(self):
+                self.client.send(open("solo.sd", "rb").read())
+                    # message is too long
+                    # so i send it from file       
+
+        def me_want_mega_box(self):
+            self.client.send(open("mega.box", "rb").read())  #14102
 
         def get_random_name(self):
                 return ''.join(random.choices(string.ascii_uppercase + string.digits, k=self.name_len))
@@ -60,12 +73,12 @@ def CanIHasAccount(s):
 
         data.read_int() # trash
         data.read_int() # id agian
-        data.read_int() # eeeeee
+        data.read_int() # idk
 
         _token = data.read_string()
         print("Token:", _token)
 
-        name = "shit_even"
+        name = "shit" # input does not work on sublime text
 
         if name == "":
             print("enter a name") #retard")
