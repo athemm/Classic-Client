@@ -86,7 +86,7 @@ def CanIHasAccount(s):
 
         s.send(Write(SetName(name)))
         # print("try recv")
-        mylastmessage, savedaworld = recv(s)
+        mylastmessage, changetheworld = recv(s)
         # print("poo")
         return _token, name, mylastmessage
         
