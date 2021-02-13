@@ -7,6 +7,7 @@ import socket
 import progressbar
 import random
 import string
+import math
 import threading
 import time
 from Packet.Packet_Factory import *
@@ -36,7 +37,6 @@ def choice_thread(server, my_token):
       4 - Add solo sd win
       5 - Send club message
       6 - Create game room
-      7 - 31"""+" çek" * 5 + """
       8 - break server (available in pro version only 1 discord nitro to buy!!!)
       9 - """)
     c = int(input("Your choice: "))
@@ -99,10 +99,13 @@ def recv(s):
     return data, header
 
 def client_thread():
-
+    conf = json.loads(open("config.json", "r").read())
     iAmNew = False
+    
     s = socket.socket()
-    s.connect(("192.168.0.19",9339))
+    
+    s.connect((conf["server"],conf["port"]))
+    
     if not os.path.isfile("credentials.txt"):
         iAmNew = True
         my_token = initSeq(s)
@@ -115,8 +118,7 @@ def client_thread():
     # Login
     if not iAmNew:
         server.SendLoginMessage(my_token)
-
-    time.sleep(0.7)
+    time.sleep(math.pi*2/10) # the sweet spot
     poop = s.recv(4096)
     print("Log in done")
     # debug
@@ -134,19 +136,5 @@ def client_thread():
         time.sleep(4)
         
 client_thread()
-
-
-#    THE GREAT UNUSED STUFF REMNANT
-#     HERE LIES THE UNUSED THINGS
-
-
-# int(input("Thread count > "))
-#count = 5
-#logs = Logs("logfile.txt")
-#logs.write("oi")
-#logs.write("shit")
-#logs.write("jk")
-#logs.erase("jk")
-
-#server.crash(1000000)
+# rip
 
