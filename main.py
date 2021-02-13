@@ -38,7 +38,7 @@ def choice_thread(server, my_token):
       5 - Send club message
       6 - Create game room
       8 - break server (available in pro version only 1 discord nitro to buy!!!)
-      9 - """)
+        """)
     c = int(input("Your choice: "))
 
     if c == 1: 
@@ -71,7 +71,18 @@ def choice_thread(server, my_token):
     if c == 7: 
         pass
 
-    if c == 8: pass
+    if c == 8:
+        print("haha thats not going to happen")
+        # ...
+        # OR IS IT
+        # while True:
+        #   server.me_want_mega_box() #module 1
+        #   server.me_want_more_trophy()
+        #   my_token = initSeq(s) # MORE ACCOUNTS!!!
+        #   for dasdasi in range(int(math.ceil((math.pi*20)-1)/2)):
+        #        my_token = initSeq(s)
+        
+        
 
     if c == 9: 
         pass
@@ -118,7 +129,7 @@ def client_thread():
     # Login
     if not iAmNew:
         server.SendLoginMessage(my_token)
-    time.sleep(math.pi*2/10) # the sweet spot
+    time.sleep(int(math.ceil((math.pi*20)-1)/2)/100+0.7) # the sweet spot / i changed my mind
     poop = s.recv(4096)
     print("Log in done")
     # debug
